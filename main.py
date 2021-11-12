@@ -85,9 +85,9 @@ for type in ['出校','入校']:
     last_info=json.loads(last_info.text)["row"]
     last_info["cxrq"]=dt
     last_info["rxrq"]=dt
-    print(f'last_info: {last_info}')
     r0 = pku.session.post(f'https://simso.pku.edu.cn/ssapi/stuaffair/epiAccess/saveSqxx?sid={sid}&_sk={xh}', json=last_info)
     res_0 = json.loads(r0.text)
+    print(f'save_info: {res_0}')
     submit=pku.session.get(f'https://simso.pku.edu.cn/ssapi/stuaffair/epiAccess/submitSqxx?sid={sid}&_sk={xh}&sqbh={res_0["row"]}')
     submit_response=json.loads(submit.text)
     if submit_response['code'] in [1, '1'] and submit_response["msg"] == '成功':
