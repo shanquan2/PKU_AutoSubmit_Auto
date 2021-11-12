@@ -1,6 +1,6 @@
 import datetime
 import json
-import system
+import os
 from urllib.parse import parse_qs
 import requests,random
 
