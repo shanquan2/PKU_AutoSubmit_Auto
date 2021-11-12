@@ -79,6 +79,7 @@ xh=json.loads(land.text)['xh']
 
 r1 = pku.session.get(f'https://simso.pku.edu.cn/pages/sadEpidemicAccess.html?_sk={xh}#/epiAccessHome')
 dt=str(datetime.datetime.now().strftime('%Y%m%d'))
+print(dt)
 
 for type in ['出校','入校']:
     last_info=pku.session.get(f'https://simso.pku.edu.cn/ssapi/stuaffair/epiAccess/getLastSqxx?sid={sid}&_sk={xh}&sqlb={type}')
